@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+    <h1>Hapodico - Verzamelen van de juiste gegevens</h1>
+    <p><strong>Welkom,</strong> bij de applicatie hapodico. Deze applicatie maakt 
+        het eenvoudig om de juiste id's op te halen voor de hapodi extensie. </p>
+    
+    <p>
+        <div class='selectbox'>
+            Kies uw vereniging:
+            <select id="clubSelector">
+                {% for id, club in clubs %}
+                    <option value="{{id}}">{{club}}</option>
+                {% endfor %}
+            </select>
+            <br />
+            <button onclick="gotoClubOverview()">Zoek gegevens</button>
+        </div>
+    </p>
+    
+    <script type="text/javascript">
+        function gotoClubOverview() {
+            window.location.replace('/club/' + jQuery('#clubSelector option:selected').val());
+        }
+    </script>
+    
+{% endblock %}

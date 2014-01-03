@@ -1,0 +1,19 @@
+{
+    "name": "pderaaij/hapodico",
+    "description": "Small application to find the sportlink ID of teams on handbal.nl",
+    "authors": [
+        {
+            "name": "Paul de Raaij",
+            "email": "paul@paulderaaij.nl"
+        }
+    ],
+    "require": {
+        "silex/silex": "~1.1",
+        "twig/twig": ">=1.8,<2.0-dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "Hapodico": "src/"
+        }
+    }
+}
