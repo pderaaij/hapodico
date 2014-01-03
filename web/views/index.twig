@@ -1,12 +1,29 @@
 {% extends 'base.twig' %}
 
 {% block body %}
-    <h1>Hapodico - Verzamelen van de juiste gegevens</h1>
+    <h1>Hapodico - Ophalen sportlink gegevens</h1>
+    
     <p><strong>Welkom,</strong> bij de applicatie hapodico. Deze applicatie maakt 
-        het eenvoudig om de juiste id's op te halen voor de hapodi extensie. </p>
+        het eenvoudig om de juiste sportlink ids op te halen voor de Hapodi extensie. </p>
+    
+    <h3>Hapodi, wat zeg je?</h3>
+    <p><a href="https://github.com/pderaaij/hapodi" target="_blank">Hapodi</a> is een 
+        Joomla plugin die het mogelijk maakt om informatie van handbal.nl op je eigen site te tonen. Denk 
+        daarbij aan uitslagen, standen en het programma. Door middel van deze extensie is het mogelijk om 
+        op een team pagina deze informatie te tonen. Kijk bijvoorbeeld naar deze 
+        <a href="http://www.westlandia.nl/component/ivejo/?task=team.view&id=21" target="_blank">teampagina</a>.
+    </p>
+    
+    <h3>Okay, dat snap ik. Waar is deze site dan voor?</h3>
+    <p>
+        Om de informatie van handbal.nl op te kunnen halen heeft Hapodi de juiste Sportlink ID nodig. Nu is 
+        het nogal een gedoe om deze ID uit Sportlink of handbal.nl te halen. Deze site toont per vereniging
+        een eenvoudig overzicht, zo klaar voor gebruik in je website. 
+    </p>
     
     <p>
         <div class='selectbox'>
+            <h3>Sportlink codes opzoeken voor vereniging</h3>
             Kies uw vereniging:
             <select id="clubSelector">
                 {% for id, club in clubs %}
@@ -16,6 +33,48 @@
             <br />
             <button onclick="gotoClubOverview()">Zoek gegevens</button>
         </div>
+    </p>
+    
+    <h3>Wat tof! Hoe krijg ik dit op mijn site?</h3>
+    <p>
+        Ik heb geprobeerd het zo simpel mogelijk te maken. Tenminste, als je een Joomla! site hebt. Ga dan 
+        naar de <a href="https://github.com/pderaaij/hapodi" target="_blank">Hapodi github</a>. Afhankelijk van
+        je Joomla! versie kun je hier direct de goede zip file downloaden. Deze kun je, indien je administrator, bent 
+        direct installeren in je website. <strong>Vergeet niet na installatie de plugin te activeren via de extension manager</strong>.
+    </p>
+    
+    <h3>Ik heb de extensie geïnstalleerd, en nu?</h3>
+    <p>
+        Eenvoudig, in het grijze vlak hierboven selecteer je jouw vereniging en klik je op 'Zoek gegevens'. De applicatie 
+        zoekt dan de goede Sportlink gegevens op. In het overzicht wat je dan krijgt zie je tags staan. Deze tags kun je in 
+        de tekst van een pagina plaatsen. De rest gebeurd vanzelf. Eitje toch?
+        
+        <br />
+        Een tag ziet er als onderstaand uit:
+        <pre>
+            {hapodi id="22343"}
+        </pre>
+        Er mag gewoon tekst omheen staan, zolang de tag maar intact is. 
+    </p>
+    
+    <h3>Help! Ik heb geen Joomla!, maar system 'X'</h3>
+    <p>
+        Geen nood, een kant en klare oplossing heb ik niet. Wel een <a href="http://www.paulderaaij.nl/2013/01/26/poulegegevens-van-handbal-nl-op-eigen-website-tonen/">blog post</a> 
+        met daar in wat meer informatie. Kom je er niet uit? Neem dan contact op.
+    </p>
+    
+    <h3>Mooi werk, maar wie ben jij eigenlijk?</h3>
+    <p>
+        Mijn naam is Paul de Raaij. In mijn dagelijks leven werk ik als software engineer voor een softwarehuis. Daarnaast ben ik 
+        actief als trainer en bestuurder bij WPK/Westlandia en speel ik bij HV Quintus. Tevens zit ik in de Westlandse Handbal Denktank, een 
+        samenwerking tussen de Westlandse en Midden-Delflandse handbalverenigingen. Meer informatie over mij is te vinden op <a href='http://paulderaaij.nl'>paulderaaij.nl</a>
+    </p>
+    
+    <p>
+        In januari 2013 heb ik een blog geschreven hoe je aan deze informatie kan komen voor je eigen site. Dit heb ik toen 
+        ontwikkeld voor de site van WPK/Westlandia. Aangezien ik geloof in open-source heb ik deze oplossing gedeeld. Gedurende
+        2013 heb ik vele vragen ontvangen over deze functionaliteit. Hapodi heb ik dan ook ontwikkeld om andere verenigingen dezelfde
+        functionaliteit te bieden, ook als er geen it achtergrond is.
     </p>
     
     <script type="text/javascript">

@@ -6,7 +6,7 @@
         <style type="text/css">
             body { 
                 font-family: "Open Sans";
-                font-size: 12px;
+                font-size: 13px;
                 background : #f1f1f1;
                 color: #444;
             }
@@ -37,12 +37,41 @@
                 display: block;
                 margin-top: 15px;
             }
+            
+            .footer {
+                background: #efefef;
+                text-align: center;
+                font-size: 12px;
+                line-height: 25px;
+            }
+            
+            table {
+                width: 100%; 
+            }
+            
+            tr:nth-child(even) {
+                background-color: #efefef;
+                line-height: 18px;
+            }
+            
+            th {
+                font-size: 14px;
+                text-align: left;
+            }
+            
+            td {
+                font-size: 12px;
+            }
+            a { color: #0074a2; text-decoration: none;}
         </style>
     </head>
     <body>
         <div id="content">
             {% block body %}{% endblock %}
         </div>
+        <p class="footer">
+            Meer informatie? Stuur een mail naar paul [at] paulderaaij.nl
+        </p>
     </body>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
